@@ -44,3 +44,6 @@ telescope:update-prompt
 ############ Your Custom Packages ############
 
 # my-custom-package
+mpowaga:autoform-summernote
+twbs:bootstrap
+fortawesome:fontawesome

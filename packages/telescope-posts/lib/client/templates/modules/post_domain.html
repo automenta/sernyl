@@ -1,5 +1,5 @@
 <template name="post_domain">
   {{#if url}}
-    <span class="post-domain {{moduleClass}}">{{domain}}</span>
+      <a href="{{url}}"  class="post-domain {{moduleClass}}" target="{{this.getLinkTarget}}">{{domain}}</a>
   {{/if}}
 </template>

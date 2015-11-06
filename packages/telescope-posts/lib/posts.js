@@ -67,19 +67,23 @@ Posts.schema = new SimpleSchema({
   body: {
     type: String,
     optional: true,
-    max: 3000,
-    editableBy: ["member", "admin"],
-    autoform: {
-      rows: 5,
-      order: 30
-    }
   },
   /**
     HTML version of the post body
   */
   htmlBody: {
     type: String,
-    optional: true
+    optional: true,
+    editableBy: ["member", "admin"],
+    autoform: {
+      rows: 5,
+      order: 30,
+      afFieldInput: {
+        type: 'summernote',
+        rows: 5,
+        class: 'editor' // optional
+      }
+    }
   },
   /**
     Count of how many times the post's page was viewed
@@ -209,7 +213,7 @@ Posts.schema = new SimpleSchema({
     optional: true
   },
   /**
-    The post author's `_id`. 
+    The post author's `_id`.
   */
   userId: {
     type: String,

@@ -2,9 +2,9 @@ var doSEOStuff = function (post) {
 
   var link = {rel: "canonical", href: "post.getPageUrl(true)"};
   DocHead.addLink(link);
-  
+
   // Set SEO properties
-  
+
   var seoProperties = {meta: {}};
 
   // Set site name
@@ -14,8 +14,8 @@ var doSEOStuff = function (post) {
   Telescope.SEO.setTitle(post.title);
 
   // Set description
-  if (!!post.body) {
-    var description = Telescope.utils.trimWords(post.body, 100);
+  if (!!post.htmlBody) {
+    var description = Telescope.utils.trimWords(post.htmlBody, 100);
     Telescope.SEO.setDescription(description);
   }
 
@@ -30,7 +30,7 @@ var doSEOStuff = function (post) {
   if (!!Settings.get("twitterAccount")) {
     DocHead.addMeta({property: "twitter:site", content: Settings.get("twitterAccount")});
   }
-  
+
 };
 
 Template.post_page.onCreated(function () {
@@ -44,7 +44,7 @@ Template.post_page.onCreated(function () {
   var postSubscription = Telescope.subsManager.subscribe('singlePost', postId);
   var postUsersSubscription = Telescope.subsManager.subscribe('postUsers', postId);
   var commentSubscription = Telescope.subsManager.subscribe('commentsList', {view: 'postComments', postId: postId});
-  
+
   // Autorun 3: when subscription is ready, update the data helper's terms
   template.autorun(function () {
 
