@@ -85,6 +85,7 @@ Posts.schema = new SimpleSchema({
       }
     }
   },
+
   /**
     Count of how many times the post's page was viewed
   */
