@@ -6,14 +6,14 @@
   }
 }
 .admin-menu{
-  background: white(0.8);
+  /*background: white(0.8);*/
   @include medium-large{
     width: 200px;
   }
   padding: 20px;
 }
 .admin-contents{
-  background: white;
+  /*background: white;*/
   @include medium-large{
     border-left: 1px solid #ccc;
     width: 100%;

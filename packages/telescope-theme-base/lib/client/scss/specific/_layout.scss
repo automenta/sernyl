@@ -21,7 +21,7 @@ body{
 
 .content-wrapper{
   padding:0 10px;
-  max-width: 1200px;
+  /*max-width: 1200px;*/
   margin: 0 auto;
   @include small{
     overflow-x: hidden;
@@ -31,7 +31,7 @@ body{
 }
 
 .grid-module, .at-form{
-  background: white;
+ /* background: white;*/
   padding: $grid-padding;
   margin-bottom: $grid-margin;
 }

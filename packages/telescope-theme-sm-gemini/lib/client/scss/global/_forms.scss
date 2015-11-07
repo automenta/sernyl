@@ -1,6 +1,7 @@
 input[type="submit"], button, .button, .btn{
-  border-radius: 0px;
   padding:12px 15px;
+  border: none;
+  border-radius: 0;
   &.btn-primary, &.submit{
     background:$green;
     text-transform: uppercase;

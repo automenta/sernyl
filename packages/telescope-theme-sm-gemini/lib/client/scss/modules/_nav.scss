@@ -28,13 +28,6 @@
       @include medium {
         padding: 0 83px;
       }
-      @include medium-large {
-        &:after {
-          content: '/scopemount';
-          font-weight: bold;
-          font-size: 21px;
-        }
-      }
       @include large {
         font-size: 80px;
         &:after {
@@ -59,7 +52,7 @@
       display: none;
       &:last-child {
         display: inline-block;
-        border-bottom: 7px dotted #147875;
+        /*border-bottom: 7px dotted #147875;*/
       }
     }
     a.sign-in,

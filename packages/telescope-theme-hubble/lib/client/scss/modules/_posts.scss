@@ -245,15 +245,15 @@
 		padding: 0;
 		position: relative;
 		padding-bottom: 40px;
-		&:after {
+		/*&:after {
 			content: " ";
 			display: block;
 			position: absolute;
 			bottom: 40px;
 			left: 0px;
 			width: 100%;
-			border-bottom: 1px solid $lightest-grey;
-		}
+			//border-bottom: 1px solid $lightest-grey;
+		}*/
 	}
 	.post-rank {
 		span {
@@ -397,15 +397,15 @@
 	display: flex;
 	align-items: center;
 	.post-admin-actions, .post-admin-stats{
-		background: $lightest-grey;
-		border-radius: 3px;
-		margin-right: 3px;
+		/*background: $lightest-grey;*/
+		/*border-radius: 3px;
+		margin-right: 3px;*/
 		display: flex;
 		align-items: center;
 		span, a{
 			display: inline-block;
 			padding: 2px 6px;
-			border-right: 1px solid white;
+			//border-right: 1px solid white;
 			&:first-child{
 				/*border-radius: 3px 0 0 3px;*/
 			}
@@ -417,10 +417,10 @@
 	}
 	.post-admin-stats{
 		background: none;
-		border: 1px solid $lightest-grey;
-		span{
+		//border: 1px solid $lightest-grey;
+		/*span{
 			border-right: 1px solid $lightest-grey;
-		}
+		}*/
 	}
 }
 .post-avatars {
