@@ -84,6 +84,7 @@ meteor@1.1.10
 meteor-base@1.0.1
 meteor-platform@1.2.3
 meteorhacks:async@1.0.0
+meteorhacks:cluster@1.6.9
 meteorhacks:fast-render@2.10.0
 meteorhacks:inject-data@1.4.1
 meteorhacks:inject-initial@1.0.3
@@ -126,6 +127,7 @@ sacha:spin@2.3.1
 sanjo:meteor-files-helpers@1.2.0_1
 sanjo:meteor-version@1.0.0
 seba:minifiers-autoprefixer@0.0.1
+sernyl:contedit@1.0.3
 service-configuration@1.0.5
 session@1.1.1
 sha@1.0.4

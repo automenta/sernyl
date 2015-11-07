@@ -1,3 +1,5 @@
+"use strict";
+
 // see https://gist.github.com/furf/3208381
 
 _.mixin({
@@ -18,7 +20,8 @@ _.mixin({
 
       while (i < n) {
         key = keys[i++];
-        obj = obj[key] = _.isObject(obj[key]) ? obj[key] : {};
+        var okey = obj[key];
+        obj = obj[key] = _.isObject(okey) ? okey : {};
       }
 
       obj[keys[i]] = value;
@@ -27,7 +30,8 @@ _.mixin({
 
     // Get deep value
     } else {
-      while ((obj = obj[keys[i++]]) !== null && i < n) {};
+      while ((obj = obj[keys[i++]]) !== null && i < n) {
+      }
       value = i < n ? void 0 : obj;
     }
 

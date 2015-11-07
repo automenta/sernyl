@@ -44,7 +44,7 @@ Telescope.utils.camelCaseify = function(str) {
  * @param {Number} numWords - Number of words to trim sentence to.
  */
 Telescope.utils.trimWords = function(s, numWords) {
-  
+
   if (!s)
     return s;
 
@@ -120,12 +120,11 @@ Telescope.utils.getOutgoingUrl = function (url) {
 // and shouldn't care about the siteUrl.
 Telescope.utils.getRouteUrl = function (routeName, params, options) {
   options = options || {};
-  var route = FlowRouter.path(
+  return FlowRouter.path(
     routeName,
     params || {},
     options
   );
-  return route;
 };
 
 Telescope.utils.getSignupUrl = function() {

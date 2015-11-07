@@ -6,7 +6,7 @@
 .single-post .posts{
 	margin-bottom: 10px;
 	.post {
-		border-radius: 3px;
+		/*border-radius: 3px;*/
 		@extend .has-shadow;
 	}
 }
@@ -18,16 +18,16 @@
 	border-bottom: 1px solid $lightest-grey;
 	position: relative;
 	width: 100%;
-	background: white;
+	/*background: white;*/
 	&:first-child {
-		border-radius: 3px 3px 0px 0px;
+		/*border-radius: 3px 3px 0px 0px;*/
 	}
 	&:last-child {
-		border-radius: 0px 0px 3px 3px;
+		/*border-radius: 0px 0px 3px 3px;*/
 		border-bottom: none;
 	}
 	&:first-child:last-child{
-		border-radius: 3px;
+		/*border-radius: 3px;*/
 	}
 	&.animate {
 		transition: ease-out, top, 400ms, 0ms;
@@ -47,7 +47,7 @@
 
 // ------------------------------------ posts views nav ------------------------------------ //
 .views-menu-wrapper{
-	background: white(0.6);
+	/*background: white(0.6);*/
 	border-radius: 3px;
 	padding: 10px;
 	margin-bottom: 10px;
@@ -261,7 +261,7 @@
 			top: 0px;
 			right: 0px;
 			z-index: 1;
-			background: black(0.4);
+			/*background: black(0.4);*/
 			color: white;
 			height: 24px;
 			width: 24px;
@@ -407,10 +407,10 @@
 			padding: 2px 6px;
 			border-right: 1px solid white;
 			&:first-child{
-				border-radius: 3px 0 0 3px;
+				/*border-radius: 3px 0 0 3px;*/
 			}
 			&:last-child{
-				border-radius: 0px 3px 3px 0px;
+				/*border-radius: 0px 3px 3px 0px;*/
 				border: none;
 			}
 		}
@@ -548,11 +548,11 @@
 }
 .post-body, .page-body {
 	@extend .has-shadow;
-	border-radius: 3px;
+	/*border-radius: 3px;*/
 	margin-bottom: 10px;
-	background: white;
+	/*background: white;*/
 	padding: 20px;
-	font-size: 16px;
+	/*font-size: 16px;*/
 	.list & {
 		display: none;
 	}

@@ -1,0 +1,3 @@
+#!/bin/sh
+# parallelization startup
+CLUSTER_WORKERS_COUNT=auto meteor

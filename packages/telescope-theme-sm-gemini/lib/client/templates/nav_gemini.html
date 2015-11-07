@@ -1,0 +1,17 @@
+<template name="nav_gemini">
+  <header class="header {{headerClass}}">
+
+    <a href="#menu" class="mobile-menu-button button">
+      {{{icon "menu"}}}
+    </a>
+
+    {{> logo}}
+
+    {{#if hasSecondaryNav}}
+      <div class="nav secondary-nav desktop-nav header-module desktop-only">
+        {{> modules "secondaryNav"}}
+      </div>
+    {{/if}}
+
+  </header>
+</template>

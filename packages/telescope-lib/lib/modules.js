@@ -1,5 +1,5 @@
 /**
- * Template modules let you insert templates in specific zones in the app's layout. 
+ * Template modules let you insert templates in specific zones in the app's layout.
  * @namespace Telescope.modules
  */
 
@@ -28,8 +28,9 @@ Telescope.modules.add = function (zone, module) {
 
   if (Array.isArray(module)) {
 
-    var modules = module; // we're dealing with an Array, so let's add an "s"
-    modules.forEach( function (module) {
+
+     // we're dealing with an Array, so let's add an "s"
+    module.forEach( function (module) {
       Telescope.modules[zone].push(module);
     });
 

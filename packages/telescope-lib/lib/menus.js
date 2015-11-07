@@ -35,8 +35,9 @@ Telescope.menuItems.add = function (menu, item) {
 
   if (Array.isArray(item)) {
 
-    var items = item; // we're dealing with an Array, so let's add an "s"
-    items.forEach( function (item) {
+
+     // we're dealing with an Array, so let's add an "s"
+    item.forEach( function (item) {
       Telescope.menuItems[menu].push(Telescope.menuItems.internationalize(item));
     });
 

@@ -32,30 +32,32 @@ Template.modules.helpers({
     var module = this;
 
     // if module should only run on specific routes, test for them
-    if (module.only) {
-      if (Array.isArray(module.only)) {
-        return _.contains(module.only, FlowRouter.getRouteName());
+    var only = module.only;
+    if (only) {
+      if (Array.isArray(only)) {
+        return _.contains(only, FlowRouter.getRouteName());
       } else {
-        return module.only();
+        return only();
       }
     }
 
     // if module should *not* run on specific routes, test for them
-    if (module.except) {
-      if (Array.isArray(module.except)) {
-        return !_.contains(module.except, FlowRouter.getRouteName());
+    var except = module.except;
+    if (except) {
+      if (Array.isArray(except)) {
+        return !_.contains(except, FlowRouter.getRouteName());
       } else {
-        return module.except();
+        return except();
       }
     }
 
     return true;
   },
   moduleData: function () {
-    var data = _.extend({
-      zone: this.modules.zone,
-      moduleClass: this.modules.moduleClass
-    }, this.modules.moduleData);
-    return data;
+    var m = this.modules;
+    return _.extend({
+      zone: m.zone,
+      moduleClass: m.moduleClass
+    }, m.moduleData);
   }
 });

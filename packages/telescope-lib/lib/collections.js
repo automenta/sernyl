@@ -59,7 +59,7 @@ Telescope.allowCheck = function (collection, userId, document, fieldNames, modif
   // allow update only if:
   // 1. user has rights to edit the document
   // 2. there is no fields in fieldNames that are not also in allowedFields
-  return Users.can.edit(userId, document) && _.difference(fields, allowedFields).length == 0;
+  return Users.can.edit(userId, document) && (_.difference(fields, allowedFields).length === 0);
 
 };
 
@@ -81,30 +81,30 @@ Telescope.schemas = {};
  */
 SimpleSchema.prototype.getEditableFields = function (user) {
   var schema = this._schema;
-  var fields = _.sortBy(_.filter(_.keys(schema), function (fieldName) {
-    var field = schema[fieldName];
-    return Users.can.editField(user, field);
+  var usersCan = Users.can;
+
+  return _.sortBy(_.filter(_.keys(schema), function (fieldName) {
+      var field = schema[fieldName];
+      return usersCan.editField(user, field);
+
   }), function (fieldName) {
     var field = schema[fieldName];
     return field.autoform && field.autoform.order;
   });
-  return fields;
 };
 
 SimpleSchema.prototype.getPublicFields = function () {
   var schema = this._schema;
-  var fields = _.filter(_.keys(schema), function (fieldName) {
+  return _.filter(_.keys(schema), function (fieldName) {
     var field = schema[fieldName];
     return !!field.public;
   });
-  return fields;
 };
 
 SimpleSchema.prototype.getProfileFields = function () {
   var schema = this._schema;
-  var fields = _.filter(_.keys(schema), function (fieldName) {
+  return _.filter(_.keys(schema), function (fieldName) {
     var field = schema[fieldName];
     return !!field.profile;
   });
-  return fields;
 };

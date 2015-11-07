@@ -7,8 +7,9 @@ Template.registerHelper('eachWithRank', function(items, options) {
   var out = '';
   items.forEach(function(item, i){
     var key = 'Branch-' + i;
-    out = out + Spark.labelBranch(key,function(){
-      return options.fn(_.extend(item, {rank: i}));
+    var rankI = {rank: i};
+    out +=  Spark.labelBranch(key,function(){
+        return options.fn(_.extend(item, rankI));
     });
   });
   return out;
@@ -26,14 +27,12 @@ Template.registerHelper('canComment', function() {
   return Users.can.comment(Meteor.user());
 });
 Template.registerHelper('isAdmin', function(user) {
-  var user = typeof user === "undefined" ? Meteor.user() : user;
-  if (Users.is.admin(Meteor.user())) {
-    return true;
-  }
-  return false;
+  user = typeof user === "undefined" ? Meteor.user() : user;
+  return !!Users.is.admin(user); //Meteor.user());
+
 });
 Template.registerHelper('canEdit', function(item) {
-  return Users.can.edit(Meteor.user(), item, false);
+  return Users.can.edit(Meteor.user(), item/*, false*/);
 });
 
 Template.registerHelper('log', function(context){
@@ -51,8 +50,8 @@ Template.registerHelper('timeAgo', function(datetime) {
 });
 
 Template.registerHelper('sanitize', function(content) {
-  console.log('cleaning up…');
-  console.log(content);
+  /*console.log('cleaning up…');
+  console.log(content);*/
   return Telescope.utils.cleanUp(content);
 });
 
@@ -87,7 +86,7 @@ Template.registerHelper('icon', function(iconName, iconClass) {
 });
 
 Template.registerHelper('moduleClass', function() {
-  // to get the module class from within a module, we go back up 
+  // to get the module class from within a module, we go back up
   // four steps to access the zone data
   var zoneData = Template.parentData(4);
   if (zoneData) {

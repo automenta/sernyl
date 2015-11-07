@@ -1,7 +1,7 @@
 var init = _.once(function () {
   var title = Settings.get("title", "Telescope");
   if (!!Settings.get("tagline")) {
-    title += ": "+Settings.get("tagline");
+    title += ": " + Settings.get("tagline");
   }
   DocHead.setTitle(title);
 
@@ -17,7 +17,7 @@ var init = _.once(function () {
   Events.analyticsInit();
 });
 
-Template.layout.onCreated(function (){
+Template.layout.onCreated(function () {
 
   DocHead.setTitle(i18n.t("loading"));
 
@@ -43,7 +43,7 @@ Template.layout.helpers({
     var userRoutes = ['signIn', 'signUp', 'changePwd', 'forgotPwd', 'resetPwd', 'enrollAccount', 'verifyEmail', 'signOut', 'userEdit', 'userProfile'];
     var isOnUserRoute = _.contains(userRoutes, FlowRouter.getRouteName());
 
-    if (!isOnUserRoute && user && ! Users.userProfileComplete(user)){
+    if (!isOnUserRoute && user && !Users.userProfileComplete(user)) {
       return {template: "user_complete"};
     }
 
@@ -57,7 +57,10 @@ Template.layout.helpers({
 
     if (FlowRouter.getRouteName() === "postSubmit") {
       if (!user) {
-        return {template: "no_rights", data: {message: i18n.t("please_sign_in_first"), link: FlowRouter.path("signIn")}};
+        return {
+          template: "no_rights",
+          data: {message: i18n.t("please_sign_in_first"), link: FlowRouter.path("signIn")}
+        };
       } else if (!Users.can.post(user)) {
         return {template: "no_rights", data: {message: i18n.t("sorry_you_dont_have_permissions_to_add_new_items")}};
       }
@@ -68,22 +71,22 @@ Template.layout.helpers({
   navLayout: function () {
     return Settings.get('navLayout', 'top-nav');
   },
-  pageName : function() {
+  pageName: function () {
     FlowRouter.watchPathChange();
     return FlowRouter.current().route.name;
   },
-  extraCode: function() {
+  extraCode: function () {
     return Settings.get('extraCode');
   }
 });
 
-Template.layout.onCreated( function () {
+Template.layout.onCreated(function () {
   Session.set('currentScroll', null);
 });
 
-Template.layout.onRendered( function () {
+Template.layout.onRendered(function () {
   var currentScroll = Session.get('currentScroll');
-  if(currentScroll){
+  if (currentScroll) {
     $('body').scrollTop(currentScroll);
     Session.set('currentScroll', null);
   }
@@ -93,19 +96,22 @@ Template.layout.onRendered( function () {
   link.type = 'image/x-icon';
   link.rel = 'shortcut icon';
   link.href = Settings.get('faviconUrl', '/img/favicon.ico');
-  document.getElementsByTagName('head')[0].appendChild(link);
+  var head = document.getElementsByTagName('head')[0];
+  head.appendChild(link);
 
   // canonical
   var canonicalLink = document.createElement('link');
   canonicalLink.rel = 'canonical';
-  document.getElementsByTagName('head')[0].appendChild(canonicalLink);
+  head.appendChild(canonicalLink);
 });
 
 Template.layout.events({
   'click .inner-wrapper': function (e) {
-    if ($('body').hasClass('mobile-nav-open')) {
+    var body = $('body');
+    var navOpen = 'mobile-nav-open';
+    if (body.hasClass(navOpen)) {
       e.preventDefault();
-      $('body').removeClass('mobile-nav-open');
+      body.removeClass(navOpen);
     }
   }
 });
