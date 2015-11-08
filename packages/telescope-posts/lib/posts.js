@@ -79,14 +79,11 @@ Posts.schema = new SimpleSchema({
       rows: 5,
       order: 30,
 
-      afFieldInput: { type: 'contenteditable' }
-
-      /*
       afFieldInput: {
         type: 'summernote',
         rows: 5,
         class: 'editor' // optional
-      }*/
+      }
     }
   },
 

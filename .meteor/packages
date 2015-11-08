@@ -40,15 +40,12 @@ telescope:update-prompt
 ############ Your Custom Packages ############
 
 # my-custom-package
-twbs:bootstrap
 fortawesome:fontawesome
 bevanhunt:leaflet
 meteorhacks:npm
 
 
-ecmascript
-meteortypescript:compiler
-mpowaga:autoform-summernote
 montecruiseto:telescope-theme-sm-gemini
 meteorhacks:cluster
 sernyl:contedit
+twbs:bootstrap

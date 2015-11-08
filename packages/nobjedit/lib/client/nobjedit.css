@@ -1,0 +1,15 @@
+.note-editor .note-editing-area .note-editable {
+    padding: 10px;
+    overflow: auto;
+    color: inherit !important;
+    background-color: transparent !important;
+    outline: 0;
+}
+.panel, .note-toolbar {
+    background: transparent !important;
+    color: white !important;
+    border-radius: 0 !important;
+    border: 1px solid gray !important;
+}
+
+
