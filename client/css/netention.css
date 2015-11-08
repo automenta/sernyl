@@ -1,0 +1,159 @@
+body {
+    background:#272727;
+    color:#DDD;
+}
+a {
+    color: #FF7214;
+}
+a:hover, a:focus {
+    color: #FF7314;
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, ul, ol, li, p, pre, div {
+    line-height: 1;
+}
+.grid-module, .at-form {
+    padding: 30px;
+}
+
+.btn-primary {
+    color: #FFFFFF;
+    background-color: #FF7214;
+    border-color: #FF7314;
+}
+.btn-sm, .btn-group-sm > .btn {
+    border-color: rgba(255,255,255,0.2);
+    background: #444 !important;
+    color: #CCC;
+    border-radius:0;
+}
+
+.btn-default:hover, .btn-default:focus {
+    color:#FFF;
+    background: #666 !important;
+}
+
+
+
+/* NAV */
+.header.dark-bg {
+    background-color: #1c1c1c !important;
+}
+
+.search.empty .search-field:focus {
+    background: transparent;
+    max-width: 250px;
+    color: #FFF !important;
+    border: 1px solid rgba(255,255,255,0.5) !important;
+}
+.top-nav .header .logo .logo-text {
+    margin-top:10px;
+}
+
+/* PROFILE */
+.avatar.avatar-large.avatar-circle {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.avatar-circle .avatar-image, .avatar-circle .avatar-initials {
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+/* POSTS */
+.views-menu-wrapper {
+    background: #444;
+    color:#EEE;
+}
+.post {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.post, .post-body, .page-body, .grid-block, .comment-content, .comment-new, .comment-actions a, .grid-module, .at-form, .form-well, .admin-menu, .admin-contents, .admin-contents.adminSettings-contents {
+    background: #444;
+    color:#b5b0b0;
+}
+.no-posts {
+    text-align: center;
+    color: rgba(255,255,255, 0.5);
+}
+.author-comment > .comment-body > .comment-content .comment-username {
+    background: none;
+    padding: 1px 5px;
+    color: #FF7214;
+}
+.post-admin .post-admin-stats span {
+    border-right: none;
+}
+.post-admin .post-admin-stats {
+    background: none;
+    border: 0;
+}
+
+.post-admin .post-admin-actions {
+    background: #333333;
+    margin-left:20px;
+}
+.post-admin .post-admin-actions span, .post-admin .post-admin-actions a, .post-admin .post-admin-stats span, .post-admin .post-admin-stats a {
+    border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+input[type="submit"], button, .button, .auth-buttons #login-buttons #login-buttons-password, .btn-primary, .header .btn-primary, .header .btn-primary:link, .header .btn-primary:visited, .error, .mobile-menu-button, .login-link-text, .post-category:hover, .post-admin a:hover {
+    background-color: #FF7214 !important;
+}
+
+
+/* ADMIN */
+.admin-menu {
+    padding: 0;
+}
+.admin-wrapper li.menu-item {
+    padding: 10px 0 10px 20px;
+}
+.admin-wrapper li.menu-item.item-active {
+    border-right: 4px solid #FF7314;
+    background:#333;
+}
+span.menu-item-label-text {
+    margin-bottom: 5px;
+}
+form.form-block, .accounts-dialog.form-block {
+    background: #373737;
+}
+
+input, .form-control {
+    background: transparent !important;
+    color: #DDD !important;
+    border-radius: 0 !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+}
+.af-fieldgroup-heading, .af-fieldGroup-heading {
+    border-bottom: 0;
+    color: #FF7314;
+    margin-top:30px;
+    font-size: 2em;
+}
+.form-horizontal .form-group {
+    margin: 0;
+}
+
+.menu-list .item-active .menu-item-label-text:after, .menu-dropdown .item-active .menu-item-label-text:after, .menu-collapsible .item-active .menu-item-label-text:after {
+    display:none
+}
+
+@media screen and (min-width: 600px) {
+    .admin-contents {
+        border-left: 1px solid rgba(255,255,255,0.2);
+    }
+}
+@media screen and (max-width: 600px) {
+    .post .post-content {
+        text-align: center;
+    }
+    .postMeta-module {
+        margin: 4px auto;
+    }
+    .post .post-content .post-heading .post-title {
+        margin-bottom: 16px;
+    }
+}

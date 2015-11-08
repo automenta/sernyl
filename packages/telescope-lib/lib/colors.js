@@ -12,9 +12,9 @@ Telescope.colorElements.colorTable = {
 };
 
 Telescope.colorElements.defaultColors = {
-  accentColor: "#DD3416", // red
+  accentColor: "#FF7214", // red
   accentContrastColor: "#ffffff", // white
-  secondaryColor: "#4e555d", // slate
+  secondaryColor: "#1c1c1c", // slate
   secondaryContrastColor: "#ffffff" // white
 };
 
@@ -22,7 +22,7 @@ Telescope.colorElements.defaultColors = {
  * Register an element to use a custom color
  * @param {string} selector - the CSS selector of the element
  * @param {string} color - the color. Either `accentColor`, `accentContrastColor`, `secondaryColor`, or `secondaryContrastColor`
- * @param {string} [property=color] - the property to colorize. Usually `color`, `background-color`, `border-color`, etc. 
+ * @param {string} [property=color] - the property to colorize. Usually `color`, `background-color`, `border-color`, etc.
  */
 Telescope.colorElements.add = function (selector, color, property) {
   var element = {selector: selector};

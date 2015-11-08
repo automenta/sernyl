@@ -118,15 +118,14 @@ form, .accounts-dialog{
     font-size: 80%;
   }
 }
-
 input[type="submit"], button, .button, .btn{
   -webkit-appearance: none;
-  border-radius: 0px;
+  border-radius: 3px;
   text-align:center;
   display:block;
   max-width: 300px;
-  /*padding:10px 12px;
-  line-height: 1;*/
+  padding:10px 12px;
+  line-height: 1;
   border:none;
   font-size:15px;
   cursor:pointer;
@@ -162,7 +161,7 @@ input[type="submit"], button, .button, .btn{
   }
 }
 .btn-primary{
-  background:darkgrey;
+  background:$red;
   &:link, &:hover, &:active, &:visited{
     color:white;
   }
@@ -233,12 +232,12 @@ fieldset{
 }
 
 .form-well {
-  /*background: $light-yellow;*/
+  background: $light-yellow;
   padding: 20px;
   margin-bottom: 40px;
 }
 .form-module {
-  /*border-bottom: 1px solid #B5B0B0;*/
+  border-bottom: 1px solid #B5B0B0;
   padding-bottom: 40px;
   margin: 0 auto 40px auto;
 }

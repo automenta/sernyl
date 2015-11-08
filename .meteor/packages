@@ -45,7 +45,10 @@ bevanhunt:leaflet
 meteorhacks:npm
 
 
-montecruiseto:telescope-theme-sm-gemini
 meteorhacks:cluster
 sernyl:contedit
 twbs:bootstrap
+
+
+npm-container
+telescope:theme-hubble
