@@ -104,10 +104,9 @@ Template.afSummernote.ensurePluginsLoaded = function () {
 
         var $editable = layoutInfo.editable();
 
-        editor.insertNode($editable,
-          Template.nobjedit.expand(
-            $("<p> <nobject type='map'/> </p>") )[0]
-        );
+        editor.insertNode($editable, $("<br/>")[0]);
+        editor.insertNode($editable, $("<x-mapmini/>")[0]);
+        editor.insertNode($editable, $("<br/>")[0]);
       }
     }
   });
@@ -145,7 +144,6 @@ Template.afSummernote.rendered = function () {
     ['height', ['height']],
     //...
   ];
-
 
   $editor.summernote(options);
 

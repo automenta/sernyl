@@ -328,7 +328,7 @@ Settings.schema = new SimpleSchema({
     optional: true,
     autoform: {
       group: 'fonts',
-      instructions: '@import URL (e.g. https://fonts.googleapis.com/css?family=Source+Sans+Pro)'
+      instructions: '@import URL'
     }
   },
   fontFamily: {

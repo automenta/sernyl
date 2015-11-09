@@ -15,12 +15,9 @@ AutoForm.addInputType('summernote', {
     var cc = e.children();
     for (var i = 0; i < cc.length; i++) {
       var ee = $(cc[i]);
-      console.log(ee);
       try {
         var vv = $(ee.children()[0]);
-        console.log(vv);
         var nobjType =vv.attr('nobjectdata');
-        console.log(nobjType);
 
         var d = Template.nobjedit.type[nobjType].toData(vv);
 
@@ -30,12 +27,10 @@ AutoForm.addInputType('summernote', {
           "</nobject>";
       }
       catch (x) {
-        console.log(' normal ', x);
         h += ee.html();
       }
 
     }
-    console.log(h);
     return h;
 
 

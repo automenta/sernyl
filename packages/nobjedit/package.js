@@ -1,9 +1,10 @@
 Package.describe({
-  name: 'sernyl:contedit',
+  name: 'automenta:nobjedit',
   summary: 'NObject Editor',
   version: '0.4.2',
   git: 'https://github.com/mpowaga/meteor-autoform-summernote'
 });
+
 
 Package.onUse(function(api) {
   api.versionsFrom('1.0');
@@ -27,4 +28,19 @@ Package.onUse(function(api) {
 
     'lib/client/autoform-summernote.js'
   ], 'client');
+
+
+
+  api.addFiles([
+    'lib/leaflet/leaflet.js'
+  ], 'client');
+
+  api.addAssets([
+    'lib/leaflet/leaflet.css',
+    'lib/leaflet/images/layers-2x.png',
+    'lib/leaflet/images/layers.png',
+    'lib/leaflet/images/marker-icon-2x.png',
+    'lib/leaflet/images/marker-icon.png',
+    'lib/leaflet/images/marker-shadow.png'
+  ],'client');
 });
