@@ -18,6 +18,7 @@ Package.onUse(function(api) {
 
   api.addFiles([
     'lib/client/nobjedit.css',
+    'lib/client/nobjedit.js',
     'lib/client/nobjedit.map.css',
     'lib/client/nobjedit.map.js',
 

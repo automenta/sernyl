@@ -6,8 +6,6 @@
 Template.afSummernote.created = function () {
   this.value = new ReactiveVar(this.data.value);
 
-  console.log($.summernote, 'exists');
-
 };
 
 Template.afSummernote.pluginsAdded = false;
@@ -103,31 +101,13 @@ Template.afSummernote.ensurePluginsLoaded = function () {
     events: { // events
       // run callback when hello button is clicked
       map: function (event, editor, layoutInfo, value) {
-        // Get current editable node
+
         var $editable = layoutInfo.editable();
 
-        var m = $('<div></div>'); //map will be inserted here
-        m.addClass('map_small');
-
-        setTimeout(function() {
-          var map = L.map(m[0]).setView([51.505, -0.09], 13);
-          var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-            osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-            osm = L.tileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib});
-
-
-          map.addLayer(osm);
-
-          var drawnItems = new L.FeatureGroup();
-          map.addLayer(drawnItems);
-
-        }, 0);
-
-        // Call insertText with 'hello'
-        editor.insertNode($editable, m[0]);
-
-        //// or
-        //layoutInfo.holder().summernote("insertText", "Hello");
+        editor.insertNode($editable,
+          Template.nobjedit.expand(
+            $("<p> <nobject type='map'/> </p>") )[0]
+        );
       }
     }
   });
@@ -152,9 +132,11 @@ Template.afSummernote.rendered = function () {
   Template.afSummernote.ensurePluginsLoaded();
 
 
+  options.airMode = false;
+
   options.toolbar = [
     //...
-    ['group', ['hello', 'map']],
+    ['group', [ 'map']],
     ['style', ['bold', 'italic', 'underline', 'clear']],
     ['font', ['strikethrough', 'superscript', 'subscript']],
     ['fontsize', ['fontsize']],
