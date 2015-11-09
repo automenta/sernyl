@@ -47,7 +47,6 @@ var proto = Object.create(HTMLDivElement.prototype);
 
 proto.createdCallback = function () {
 
-  console.log(this, 'creating');
 
   var j = $(this).text() || {
       center: [51.505, -0.09],
@@ -55,31 +54,31 @@ proto.createdCallback = function () {
     };
 
 
-
   //setTimeout(function () {
 
-    var m = $('<div/>');
+  var m = $('<div/>');
 
 
-    m.css({ width: 500, height: 300});//'map_small');
+  m.css({width: 500, height: 300});//'map_small');
 
 
+  var content = this;
 
+  /*var content = this.createShadowRoot();
 
-  var content = this.createShadowRoot();
-
-  $(content).append(
-    '<style> @import "packages/automenta_nobjedit/lib/leaflet/leaflet.css"; </style>'
-  );
+   $(content).append(
+   '<style> @import "packages/automenta_nobjedit/lib/leaflet/leaflet.css"; </style>'
+   );*/
 
   //setTimeout(function() {
 
 
+  var viewCenter = j.center;
+  var viewZoom = j.zoom;
 
-    var viewCenter = j.center;
-    var viewZoom = j.zoom;
+  var that = this;
 
-
+  setTimeout(function () {
     var map = L.map(m[0]).setView(viewCenter, viewZoom);
     //m.data('leaflet', map);
 
@@ -97,24 +96,27 @@ proto.createdCallback = function () {
 
     map.invalidateSize(false);
 
-    this.map = map;
+    that.map = map;
 
-   console.log(this, map, 'created');
+    //console.log(this, map, 'created');
+
+  }, 0);
+
 };
 
 proto.attachedCallback = function () {
 
-  console.log(this, 'attached');
-    if (this.map) {
-      this.map.invalidateSize(false);
-    }
+  //console.log(this, 'attached');
+  //  if (this.map) {
+  //    this.map.invalidateSize(false);
+  //  }
 };
 proto.detachedCallback = function () {
-  console.log(this, 'dettached');
-  if (this.map) {
-    this.map.remove();
-    this.map = null;
-  }
+  //console.log(this, 'dettached');
+  //if (this.map) {
+  //  this.map.remove();
+  //  this.map = null;
+  //}
 };
 
 var XFoo = document.registerElement('x-mapmini', {

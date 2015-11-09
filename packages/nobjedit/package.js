@@ -32,11 +32,11 @@ Package.onUse(function(api) {
 
 
   api.addFiles([
+    'lib/leaflet/leaflet.css',
     'lib/leaflet/leaflet.js'
   ], 'client');
 
   api.addAssets([
-    'lib/leaflet/leaflet.css',
     'lib/leaflet/images/layers-2x.png',
     'lib/leaflet/images/layers.png',
     'lib/leaflet/images/marker-icon-2x.png',
