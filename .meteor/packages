@@ -48,3 +48,4 @@ twbs:bootstrap
 
 telescope:theme-hubble
 flemay:less-autoprefixer
+tap:i18n
