@@ -62,6 +62,9 @@ h1, h2, h3, h4, h5, ul, ol, li, p, pre, div {
 }
 
 /* POSTS */
+.banner.banner {
+    background: rgba(255, 255, 255, 0.1);
+}
 .views-menu-wrapper {
     background: #444;
     color:#EEE;
@@ -120,12 +123,23 @@ span.menu-item-label-text {
 form.form-block, .accounts-dialog.form-block {
     background: #373737;
 }
-
+.users-dashboard .reactive-table-filter span {
+    font-size: 1.15em;
+    color: #DDD;
+    background: #444;
+}
+.input-group-addon {
+    padding: 0 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
 input, .form-control {
     background: transparent !important;
     color: #DDD !important;
     border-radius: 0 !important;
     border: 1px solid rgba(255,255,255,0.2) !important;
+}
+.form-control option {
+    background: #444;
 }
 .af-fieldgroup-heading, .af-fieldGroup-heading {
     border-bottom: 0;
@@ -139,6 +153,21 @@ input, .form-control {
 
 .menu-list .item-active .menu-item-label-text:after, .menu-dropdown .item-active .menu-item-label-text:after, .menu-collapsible .item-active .menu-item-label-text:after {
     display:none
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,0.1);
+}
+table tr {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    border-top: none;
+}
+.table > thead > tr > th {
+    border-bottom: 2px solid rgba(255,255,255,.1);
+}
+.table-hover > tbody > tr:hover {
+    background-color: #f5f5f5 !important;
 }
 
 @media screen and (min-width: 600px) {
